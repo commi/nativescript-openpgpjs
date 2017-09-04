@@ -20564,9 +20564,9 @@ var randomBytesIos = _dereq_("./randombytes-native.ios");
 
 module.exports = function (length, cb) {
   try {
-    randomBytesAndroid(length, cb);
+    return randomBytesAndroid(length, cb);
   } catch(e) {
-    randomBytesIos(length, cb);
+    return randomBytesIos(length, cb);
   }
 };
 
