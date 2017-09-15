@@ -4145,6 +4145,11 @@
         }
       }
     },
+    "base64-js": {
+      "version": "1.2.1",
+      "from": "base64-js@>=1.0.2 <2.0.0",
+      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.2.1.tgz"
+    },
     "bn.js": {
       "version": "4.11.8",
       "from": "bn.js@>=4.1.1 <5.0.0",
@@ -4185,6 +4190,11 @@
       "version": "4.0.4",
       "from": "browserify-sign@>=4.0.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.4.tgz"
+    },
+    "buffer": {
+      "version": "5.0.7",
+      "from": "buffer@latest",
+      "resolved": "https://registry.npmjs.org/buffer/-/buffer-5.0.7.tgz"
     },
     "buffer-xor": {
       "version": "1.0.3",
@@ -4284,7 +4294,7 @@
     "crypto-browserify": {
       "version": "3.11.1",
       "from": "git+https://github.com/mohammadrafigh/crypto-browserify.git#master",
-      "resolved": "git+https://github.com/mohammadrafigh/crypto-browserify.git#acf17b3dc76f4e37ff04e533142bdb03bc70986a"
+      "resolved": "git+https://github.com/mohammadrafigh/crypto-browserify.git#b3d6887c27aecfbd13215aaa5d959547aa3f7fac"
     },
     "d": {
       "version": "1.0.0",
@@ -9937,6 +9947,11 @@
       "resolved": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.5.0.tgz",
       "dev": true
     },
+    "ieee754": {
+      "version": "1.1.8",
+      "from": "ieee754@>=1.1.4 <2.0.0",
+      "resolved": "https://registry.npmjs.org/ieee754/-/ieee754-1.1.8.tgz"
+    },
     "inherits": {
       "version": "2.0.3",
       "from": "inherits@>=2.0.3 <3.0.0",
@@ -10632,8 +10647,8 @@
     },
     "nativescript-randombytes": {
       "version": "1.0.0",
-      "from": "nativescript-randombytes@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/nativescript-randombytes/-/nativescript-randombytes-1.0.0.tgz"
+      "from": "git+https://github.com/mohammadrafigh/nativescript-randombytes.git",
+      "resolved": "git+https://github.com/mohammadrafigh/nativescript-randombytes.git#054a9953bf81a1116d615e9c692b21f95025d91f"
     },
     "node-fetch": {
       "version": "1.5.3",
