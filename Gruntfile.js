@@ -45,7 +45,7 @@ module.exports = function(grunt) {
           browserifyOptions: {
             standalone: 'openpgp'
           },
-          external: [ 'crypto', 'buffer', 'node-localstorage', 'node-fetch' ],
+          external: [ 'crypto', 'node-localstorage', 'node-fetch' ],
           transform: [
             ["babelify", {
               ignore: ['*.min.js'],
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
             debug: true,
             standalone: 'openpgp'
           },
-          external: [ 'crypto', 'buffer', 'node-localstorage', 'node-fetch' ],
+          external: [ 'crypto', 'node-localstorage', 'node-fetch' ],
           transform: [
             ["babelify", {
               ignore: ['*.min.js'],
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
           'test/lib/unittests-bundle.js': [ './test/unittests.js' ]
         },
         options: {
-          external: [ 'crypto', 'buffer' , 'node-localstorage', 'node-fetch', 'openpgp', '../../dist/openpgp', '../../../dist/openpgp' ]
+          external: [ 'crypto', 'node-localstorage', 'node-fetch', 'openpgp', '../../dist/openpgp', '../../../dist/openpgp' ]
         }
       }
     },
