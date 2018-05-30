@@ -108,6 +108,9 @@ export default {
   },
 
   writeDate: function (time) {
+    if (time.constructor.name !== 'Date') {
+      time = new Date(time);
+    }
     var numeric = Math.round(time.getTime() / 1000);
 
     return this.writeNumber(numeric, 4);
@@ -520,22 +523,11 @@ export default {
   },
 
   /**
-   * Detect Node.js runtime.
-   */
-  detectNode: function() {
-    return typeof window === 'undefined';
-  },
-
-  /**
    * Get native Node.js crypto api. The default configuration is to use
    * the api when available. But it can also be deactivated with config.use_native
    * @return {Object}   The crypto module or 'undefined'
    */
   getNodeCrypto: function() {
-    if (!this.detectNode() || !config.use_native) {
-      return;
-    }
-
     return require('crypto-browserify');
   },
 
@@ -545,10 +537,6 @@ export default {
    * @return {Function}   The Buffer constructor or 'undefined'
    */
   getNodeBuffer: function() {
-    if (!this.detectNode()) {
-      return;
-    }
-
     return require('buffer').Buffer;
   }
 

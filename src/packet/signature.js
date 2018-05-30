@@ -602,6 +602,13 @@ Signature.prototype.calculateTrailer = function () {
   if (this.version === 3) {
     return new Uint8Array(0);
   }
+  if (this.signatureData.constructor.name !== 'Uint8Array') {
+    var signatureDataArray = [];
+    for (var k in this.signatureData) {
+      signatureDataArray.push(this.signatureData[k]);
+    }
+    this.signatureData = new Uint8Array(signatureDataArray);
+  }
   var first = new Uint8Array([4, 0xFF]); //Version, ?
   return util.concatUint8Array([first, util.writeNumber(this.signatureData.length, 4)]);
 };
@@ -615,6 +622,13 @@ Signature.prototype.calculateTrailer = function () {
  * @return {boolean} True if message is verified, else false.
  */
 Signature.prototype.verify = function (key, data) {
+  if (this.signature.constructor.name !== 'Uint8Array') {
+    var signatureArray = []
+    for (var k in this.signature) {
+      signatureArray.push(this.signature[k]);
+    }
+    this.signature = new Uint8Array(signatureArray);
+  }
   var signatureType = enums.write(enums.signature, this.signatureType),
     publicKeyAlgorithm = enums.write(enums.publicKey, this.publicKeyAlgorithm),
     hashAlgorithm = enums.write(enums.hash, this.hashAlgorithm);

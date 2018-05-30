@@ -111,6 +111,13 @@ SymEncryptedIntegrityProtected.prototype.encrypt = function (sessionKeyAlgorithm
  * @return {Promise}
  */
 SymEncryptedIntegrityProtected.prototype.decrypt = function (sessionKeyAlgorithm, key) {
+  if (this.encrypted.constructor.name !== 'Uint8Array') {
+    var encryptedArray = []
+    for (var k in this.encrypted) {
+      encryptedArray.push(this.encrypted[k])
+    }
+    this.encrypted = new Uint8Array(encryptedArray);
+  }
   let decrypted;
   if(sessionKeyAlgorithm.substr(0,3) === 'aes') {  // AES optimizations. Native code for node, asmCrypto for browser.
     decrypted = aesDecrypt(sessionKeyAlgorithm, this.encrypted, key);
