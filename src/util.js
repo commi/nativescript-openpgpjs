@@ -609,7 +609,7 @@ export default {
       return;
     }
 
-    return util.nodeRequire('crypto-browserify');
+    return require('crypto-browserify');
   },
 
   getNodeZlib: function() {
@@ -617,7 +617,7 @@ export default {
       return;
     }
 
-    return util.nodeRequire('browserify-zlib');
+    return require('browserify-zlib');
   },
 
   /**
@@ -626,11 +626,11 @@ export default {
    * @returns {Function}   The Buffer constructor or 'undefined'
    */
   getNodeBuffer: function() {
-    return (util.nodeRequire('buffer') || {}).Buffer;
+    return (require('buffer') || {}).Buffer;
   },
 
   getNodeStream: function() {
-    return (util.nodeRequire('stream-browserify') || {}).Readable;
+    return (require('stream-browserify') || {}).Readable;
   },
 
   getHardwareConcurrency: function() {
