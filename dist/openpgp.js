@@ -55935,7 +55935,7 @@ const webCurves = {
   'p384': 'P-384',
   'p521': 'P-521'
 };
-const knownCurves = nodeCrypto ? nodeCrypto.getCurves() : [];
+const knownCurves = nodeCrypto && nodeCrypto.getCurves ? nodeCrypto.getCurves() : [];
 const nodeCurves = nodeCrypto ? {
   secp256k1: knownCurves.includes('secp256k1') ? 'secp256k1' : undefined,
   p256: knownCurves.includes('prime256v1') ? 'prime256v1' : undefined,
