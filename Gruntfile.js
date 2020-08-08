@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           },
           cacheFile: 'browserify-cache' + (compat ? '-compat' : '') + (lightweight ? '-lightweight' : '') + '.json',
           // Don't bundle these packages with openpgp.js
-          external: ['crypto', 'zlib', 'node-localstorage', 'node-fetch', 'asn1.js', 'stream', 'buffer'].concat(
+          external: ['crypto', 'zlib', 'node-localstorage', 'node-fetch', 'asn1.js', 'stream'].concat(
             compat ? [] : [
               'whatwg-fetch',
               'core-js/fn/array/fill',
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
         },
         options: {
           cacheFile: 'browserify-cache-unittests.json',
-          external: ['buffer', 'openpgp', '../../dist/openpgp', '../../../dist/openpgp'],
+          external: ['openpgp', '../../dist/openpgp', '../../../dist/openpgp'],
           transform: [
             ["babelify", {
               global: true,
