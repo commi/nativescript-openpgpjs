@@ -54187,7 +54187,7 @@ exports.default = {
   },
 
   getNodeStream: function getNodeStream() {
-    return (_util2.default.nodeRequire('stream') || {}).Readable;
+    return (_util2.default.nodeRequire('stream-browserify') || {}).Readable;
   },
 
   getHardwareConcurrency: function getHardwareConcurrency() {
