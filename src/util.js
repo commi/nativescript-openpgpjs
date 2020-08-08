@@ -609,7 +609,7 @@ export default {
       return;
     }
 
-    return util.nodeRequire('crypto');
+    return util.nodeRequire('crypto-browserify');
   },
 
   getNodeZlib: function() {
@@ -617,7 +617,7 @@ export default {
       return;
     }
 
-    return util.nodeRequire('zlib');
+    return util.nodeRequire('browserify-zlib');
   },
 
   /**
