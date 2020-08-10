@@ -630,7 +630,7 @@ export default {
   },
 
   getNodeStream: function() {
-    return (require('stream-browserify') || {}).Readable;
+    return require('readable-stream').Readable;
   },
 
   getHardwareConcurrency: function() {
