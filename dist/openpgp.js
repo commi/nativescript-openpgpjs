@@ -30189,7 +30189,7 @@ var hexSliceLookupTable = (function () {
 
 },{"base64-js":34,"ieee754":174}],107:[function(require,module,exports){
 var Buffer = require('safe-buffer').Buffer
-var Transform = require('streadable-streamream').Transform
+var Transform = require('readable-stream').Transform
 var StringDecoder = require('string_decoder').StringDecoder
 var inherits = require('inherits')
 
