@@ -54,7 +54,7 @@ function promisifyIE11Op(keyObj, err) {
 }
 
 /* eslint-disable no-invalid-this */
-const RSAPrivateKey = util.detectNode() ? asn1.define('RSAPrivateKey', function () {
+const RSAPrivateKey = asn1.define('RSAPrivateKey', function () {
   this.seq().obj( // used for native NodeJS crypto
     this.key('version').int(), // 0
     this.key('modulus').int(), // n
@@ -66,14 +66,14 @@ const RSAPrivateKey = util.detectNode() ? asn1.define('RSAPrivateKey', function 
     this.key('exponent2').int(), // dq
     this.key('coefficient').int() // u
   );
-}) : undefined;
+});
 
-const RSAPublicKey = util.detectNode() ? asn1.define('RSAPubliceKey', function () {
+const RSAPublicKey = asn1.define('RSAPubliceKey', function () {
   this.seq().obj( // used for native NodeJS crypto
     this.key('modulus').int(), // n
     this.key('publicExponent').int(), // e
   );
-}) : undefined;
+});
 /* eslint-enable no-invalid-this */
 
 export default {

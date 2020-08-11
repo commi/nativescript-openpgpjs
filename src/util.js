@@ -26,6 +26,7 @@
  * @module util
  */
 
+import { TextDecoder, TextEncoder } from 'text-encoding-utf-8';
 import emailAddresses from 'email-addresses';
 import stream from 'web-stream-tools';
 import config from './config';
